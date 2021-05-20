@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>8.10.0.0 | Filters | Rackspace Auth User Filter</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/_stylesheets/asciibinder.css" >
+  <link rel="stylesheet" href="/_stylesheets/repose.css" >
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body onload="selectVersion('8.10.0.0');">
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a class="navbar-brand" href="http://www.openrepose.org/">
+          <img alt="OpenRepose" src="/_images/repose-logo.png" align="bottom">
+        </a>
+      </li>
+      <li class="sitename">
+        <a href="../../index.html">
+          Home
+        </a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="/versions/8.10.0.0/welcome/index.html">
+          Repose
+        </a>
+        <select id="version-selector" onchange="versionSelector(this);" w3-include-html="/_includes/versions.html">
+        </select>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../filters/index.html">Filters</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Rackspace Auth User Filter
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <a class="navbar-search" href="/versions/search.html">
+          <span class="glyphicon glyphicon-search"/>
+          Search
+        </a>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Welcome to Repose
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+            <li><a class="" href="../welcome/troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../welcome/release-notes.html">Release Notes</a></li>
+            <li><a class="" href="../welcome/style-guide.html">Style Guide</a></li>
+            <li><a class="" href="../welcome/faq.html">FAQ</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Architecture
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../architecture/index.html">Overview</a></li>
+            <li><a class="" href="../architecture/configuration.html">Configuration</a></li>
+            <li><a class="" href="../architecture/container.html">Container</a></li>
+            <li><a class="" href="../architecture/packages.html">Packages</a></li>
+            <li><a class="" href="../architecture/system-model.html">System Model</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Recipes
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../recipes/index.html">Overview</a></li>
+            <li><a class="" href="../recipes/quick-start.html">Quick Start</a></li>
+            <li><a class="" href="../recipes/getting-started.html">Getting Started</a></li>
+            <li><a class="" href="../recipes/custom-filter-for-repose.html">Custom Filter for Repose</a></li>
+            <li><a class="" href="../recipes/docker.html">Docker</a></li>
+            <li><a class="" href="../recipes/performance-best-practices.html">Performance Best Practices</a></li>
+            <li><a class="" href="../recipes/role-based-access-control.html">Role Based Access Control</a></li>
+            <li><a class="" href="../recipes/running-valve.html">Running Valve</a></li>
+            <li><a class="" href="../recipes/valve-installation.html">Valve Installation</a></li>
+            <li><a class="" href="../recipes/war-installation.html">WAR Installation</a></li>
+            <li><a class="" href="../recipes/echo-server.html">Echo Server</a></li>
+            <li><a class="" href="../recipes/rate-limiting.html">Rate Limiting</a></li>
+            <li><a class="" href="../recipes/multi-tenant.html">Multi Tenant Authorization</a></li>
+            <li><a class="" href="../recipes/user-access-events.html">User Access Events</a></li>
+            <li><a class="" href="../recipes/basic-authentication.html">Basic Authentication</a></li>
+            <li><a class="" href="../recipes/delegation.html">Delegation</a></li>
+            <li><a class="" href="../recipes/preventing-xml-bomb.html">Preventing XML bomb attacks</a></li>
+            <li><a class="" href="../recipes/api-event-flume.html">API Access Event Recording with Flume</a></li>
+            <li><a class="" href="../recipes/xsd-versioning.html">XSD Versioning Guidelines</a></li>
+            <li><a class="" href="../recipes/client-authentication.html">SSL/TLS Client Authentication</a></li>
+            <li><a class="" href="../recipes/functional-test-framework.html">Functional Test Framework</a></li>
+            <li><a class="" href="../recipes/glassfish-setup.html">Glassfish Setup</a></li>
+            <li><a class="" href="../recipes/tomcat-setup.html">Tomcat Setup</a></li>
+            <li><a class="" href="../recipes/http-container-attributes.html">HTTP Container Attributes</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-down"></span>Filters
+      </a>
+      <ul id="topicGroup3" class="collapse in list-unstyled">
+            <li><a class="" href="../filters/index.html">Overview</a></li>
+            <li><a class="" href="../filters/add-header.html">Add Header Filter</a></li>
+            <li><a class="" href="../filters/api-validator.html">API Validator Filter</a></li>
+            <li><a class="" href="../filters/attribute-mapping-policy-validation.html">Attribute Mapping Policy Validation filter</a></li>
+            <li><a class="" href="../filters/body-extractor-to-header.html">Body Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/body-patcher.html">Body Patcher Filter</a></li>
+            <li><a class="" href="../filters/compression.html">Compression Filter</a></li>
+            <li><a class="" href="../filters/content-type-stripper.html">Content Type Stripper Filter</a></li>
+            <li><a class="" href="../filters/cors.html">CORS Filter</a></li>
+            <li><a class="" href="../filters/derp.html">Delegation Response Processor (DeRP) Filter</a></li>
+            <li><a class="" href="../filters/destination-router.html">Destination Router Filter</a></li>
+            <li><a class="" href="../filters/echo.html">Echo Filter</a></li>
+            <li><a class="" href="../filters/exception.html">Exception Filter</a></li>
+            <li><a class="" href="../filters/forwarded-proto.html">Forwarded Protocol Filter</a></li>
+            <li><a class="" href="../filters/header-normalization.html">Header Normalization filter</a></li>
+            <li><a class="" href="../filters/header-translation.html">Header Translation Filter</a></li>
+            <li><a class="" href="../filters/header-user.html">Header User Filter</a></li>
+            <li><a class="" href="../filters/herp.html">Highly Efficient Record Processor (HERP) Filter</a></li>
+            <li><a class="" href="../filters/ip-user.html">IP User Filter</a></li>
+            <li><a class="" href="../filters/iri-validator.html">IRI Validator Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2.html">Keystone v2 Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2-authorization.html">Keystone v2 Authorization Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2-basic-auth.html">Keystone v2 Basic Auth Filter</a></li>
+            <li><a class="" href="../filters/merge-header.html">Merge Header Filter</a></li>
+            <li><a class="" href="../filters/openstack-identity-v3.html">Openstack Identity v3 Filter</a></li>
+            <li><a class=" active" href="../filters/rackspace-auth-user.html">Rackspace Auth User Filter</a></li>
+            <li><a class="" href="../filters/rate-limiting.html">Rate Limiting Filter</a></li>
+            <li><a class="" href="../filters/regex-rbac.html">RegEx Role Based Access Control (RBAC) Filter</a></li>
+            <li><a class="" href="../filters/saml-policy.html">SAML Policy Translation Filter</a></li>
+            <li><a class="" href="../filters/scripting.html">Scripting Filter</a></li>
+            <li><a class="" href="../filters/simple-rbac.html">Simple Role Based Access Control (RBAC) Filter</a></li>
+            <li><a class="" href="../filters/slf4j-http-logging.html">SFL4J HTTP Logging Filter</a></li>
+            <li><a class="" href="../filters/split-header.html">Split Header Filter</a></li>
+            <li><a class="" href="../filters/tenant-culling.html">Tenant Culling Filter</a></li>
+            <li><a class="" href="../filters/translation.html">Translation Filter</a></li>
+            <li><a class="" href="../filters/uri-normalization.html">URI Normalization Filter</a></li>
+            <li><a class="" href="../filters/uri-stripper.html">URI Stripper Filter</a></li>
+            <li><a class="" href="../filters/uri-user.html">URI User Filter</a></li>
+            <li><a class="" href="../filters/url-extractor-to-header.html">URL Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/valkyrie-authorization.html">Valkyrie Authorization Filter</a></li>
+            <li><a class="" href="../filters/versioning.html">Versioning Filter</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-right"></span>Services
+      </a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../services/index.html">Overview</a></li>
+            <li><a class="" href="../services/atom-feed-consumption.html">Atom Feed Consumption Service</a></li>
+            <li><a class="" href="../services/datastores.html">Datastores</a></li>
+            <li><a class="" href="../services/health-check.html">Health Check service</a></li>
+            <li><a class="" href="../services/http-connection-pool.html">HTTP Connection Pool service</a></li>
+            <li><a class="" href="../services/logging.html">Logging Service</a></li>
+            <li><a class="" href="../services/metrics.html">Metrics Service</a></li>
+            <li><a class="" href="../services/open-tracing.html">OpenTracing Service</a></li>
+            <li><a class="" href="../services/phone-home.html">Phone Home Service</a></li>
+            <li><a class="" href="../services/response-messaging.html">Response Messaging service</a></li>
+            <li><a class="" href="../services/uri-redaction.html">URI Redaction service</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-right"></span>Developer
+      </a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li><a class="" href="../developer/index.html">Overview</a></li>
+            <li><a class="" href="../developer/docker.html">Docker</a></li>
+            <li><a class="" href="../developer/performance.html">Performance</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Rackspace Auth User Filter</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Rackspace Auth User filter is for usage in <strong>Repose</strong> instances that sit in front of Keystone v1 and v2 deployments.
+It&#8217;s meant to be used for login requests to capture username for both <a href="../recipes/rate-limiting.html">rate limiting</a> and <a href="../recipes/user-access-events.html">user access events</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="general-filter-information"><a class="anchor" href="#general-filter-information"></a>General Filter Information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name:</strong> rackspace-auth-user</p>
+</li>
+<li>
+<p><strong>Released:</strong> v3.1.1 &amp; v6.1.1.0+</p>
+</li>
+<li>
+<p><strong>Bundle:</strong> repose-filter-bundle</p>
+</li>
+<li>
+<p><strong>Default Configuration:</strong> rackspace-auth-user.cfg.xml</p>
+</li>
+<li>
+<p><strong>Configuration Schema:</strong> <a href="../schemas/rackspace-auth-user-configuration.xsd">rackspace-auth-user-configuration.xsd</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites-postconditions"><a class="anchor" href="#prerequisites-postconditions"></a>Prerequisites &amp; Postconditions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="required-request-headers"><a class="anchor" href="#required-request-headers"></a>Required Request Headers</h3>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. Request</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Request Headers</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Conditions of Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-SessionId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-Factor Authentication Session Id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required during the second call of a multi-factor authentication attempt</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 2. Response</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Response Headers</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Conditions of Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WWW-Authenticate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-Factor Authentication Session Id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required during the first call of a multi-factor authentication attempt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="required-preceding-filters"><a class="anchor" href="#required-preceding-filters"></a>Required Preceding Filters</h3>
+<div class="paragraph">
+<p>This filter has no dependencies on other filters.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="request-headers-created"><a class="anchor" href="#request-headers-created"></a>Request Headers Created</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Request</caption>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 12%;">
+<col style="width: 73%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Request Headers</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Conditions of Creation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-PP-User</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username of the requester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username present in the request body or the session id present for MFA.
+  Prepended with <code>Racker:</code> if domain was present and had a value of <code>Rackspace</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-User-Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username of the requester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username present in the request body or the session id present for MFA.
+  Prepended with <code>Racker:</code> if domain was present and had a value of <code>Rackspace</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-PP-Groups</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configured value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username present in the request body or the session id present for MFA.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-Domain</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain in the request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username and Domain present in the request body or the session id present for MFA.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="request-body-changes"><a class="anchor" href="#request-body-changes"></a>Request Body Changes</h3>
+<div class="paragraph">
+<p>This filter does not modify the request body.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="recommended-follow-on-succeeding-filters"><a class="anchor" href="#recommended-follow-on-succeeding-filters"></a>Recommended Follow-On (Succeeding) Filters</h3>
+<div class="paragraph">
+<p>This filter needs to appear in the filter chain before any of the filters that need the information that derives and provides.
+That means the <a href="rate-limiting.html">rate limiting filter</a> when rate limiting, and <a href="herp.html">herp filter</a> when doing user access events.
+When doing both the order should be:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Rackspace Auth User</p>
+</li>
+<li>
+<p>Highly Efficient Record Processor</p>
+</li>
+<li>
+<p>Rate Limiting</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For further details about the reasoning behind this ordering see <a href="../recipes/user-access-events.html">user access events</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="response-body-changes"><a class="anchor" href="#response-body-changes"></a>Response Body Changes</h3>
+<div class="paragraph">
+<p>This filter does not modify the response body.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="response-headers-created"><a class="anchor" href="#response-headers-created"></a>Response Headers Created</h3>
+<div class="paragraph">
+<p>This filter does not create/modify any response headers.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="response-status-codes"><a class="anchor" href="#response-status-codes"></a>Response Status Codes</h3>
+<div class="paragraph">
+<p>This filter does not modify the response code.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">rackspace-auth-user.cfg.xml</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span style="color:#579">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;rackspace-auth-user</span>
+    <span style="color:#b48">xmlns</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">http://docs.openrepose.org/repose/rackspace-auth-user/v1.0</span><span style="color:#710">'</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+
+    <span style="color:#070;font-weight:bold">&lt;v1_1</span> <span style="color:#b48">content-body-read-limit</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2048</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>  <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
+        <span style="color:#070;font-weight:bold">&lt;group&gt;</span>1_1 Group<span style="color:#070;font-weight:bold">&lt;/group&gt;</span> <i class="conum" data-value="3"></i><b>(3)</b>
+        <span style="color:#070;font-weight:bold">&lt;quality&gt;</span>0.75<span style="color:#070;font-weight:bold">&lt;/quality&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
+    <span style="color:#070;font-weight:bold">&lt;/v1_1&gt;</span>
+
+    <span style="color:#070;font-weight:bold">&lt;v2_0&gt;</span> <i class="conum" data-value="5"></i><b>(5)</b>
+        <span style="color:#070;font-weight:bold">&lt;group&gt;</span>2_0 Group<span style="color:#070;font-weight:bold">&lt;/group&gt;</span> <i class="conum" data-value="3"></i><b>(3)</b>
+        <span style="color:#070;font-weight:bold">&lt;quality&gt;</span>0.80<span style="color:#070;font-weight:bold">&lt;/quality&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
+    <span style="color:#070;font-weight:bold">&lt;/v2_0&gt;</span>
+
+<span style="color:#070;font-weight:bold">&lt;/rackspace-auth-user&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>v1_1</code> element lets the filter know that you&#8217;d like to try to process request bodies using the 1.1 contract for auth requests.
+It is optional.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>content-body-read-limit</code> attribute specifies how much of the body you&#8217;d like the filter to read before giving up and assuming it&#8217;s not present.<br>
+Default: <code>4096</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>group</code> element specifies what group name to use in the <code>X-PP-Groups</code> header.<br>
+Default: <code>Pre_Auth</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The <code>quality</code> element specifies what quality to apply to the <code>X-PP-User</code> and <code>X-PP-Groups</code> headers, it should be a value between <code>0</code> and <code>1.0</code>.<br>
+Default: <code>0.6</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>The <code>v2_0</code> element is similar to the <code>v1_1</code> element but specifies that the filter should try to process request bodies using the 2.0 contract for auth requests and forgotten password requests.
+It is optional.
+The elements are not exclusive, and you can specify one, both, or neither.
+This element can also take a <code>content-body-read-limit</code> attribute with the same behavior as the <code>v1_1</code> element.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="/_javascripts/include-html.js" type="text/javascript"></script>
+  <script>includeHTML();</script>
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

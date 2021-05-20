@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>8.5.0.1 | Architecture | Performance</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/_stylesheets/asciibinder.css" >
+  <link rel="stylesheet" href="/_stylesheets/repose.css" >
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body onload="selectVersion('8.5.0.1');">
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a class="navbar-brand" href="http://www.openrepose.org/">
+          <img alt="OpenRepose" src="/_images/repose-logo.png" align="bottom">
+        </a>
+      </li>
+      <li class="sitename">
+        <a href="../../index.html">
+          Home
+        </a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="/versions/8.5.0.1/welcome/index.html">
+          Repose
+        </a>
+        <select id="version-selector" onchange="versionSelector(this);" w3-include-html="/_includes/versions.html">
+        </select>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../architecture/index.html">Architecture</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Performance
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <a class="navbar-search" href="/versions/search.html">
+          <span class="glyphicon glyphicon-search"/>
+          Search
+        </a>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Welcome to Repose
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+            <li><a class="" href="../welcome/troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../welcome/release-notes.html">Release Notes</a></li>
+            <li><a class="" href="../welcome/style-guide.html">Style Guide</a></li>
+            <li><a class="" href="../welcome/faq.html">FAQ</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Architecture
+      </a>
+      <ul id="topicGroup1" class="collapse in list-unstyled">
+            <li><a class="" href="../architecture/index.html">Overview</a></li>
+            <li><a class="" href="../architecture/configuration.html">Configuration</a></li>
+            <li><a class="" href="../architecture/container.html">Container</a></li>
+            <li><a class="" href="../architecture/packages.html">Packages</a></li>
+            <li><a class="" href="../architecture/system-model.html">System Model</a></li>
+            <li><a class=" active" href="../architecture/performance.html">Performance</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Recipes
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../recipes/index.html">Overview</a></li>
+            <li><a class="" href="../recipes/quick-setup.html">Quick Setup</a></li>
+            <li><a class="" href="../recipes/getting-started.html">Getting Started</a></li>
+            <li><a class="" href="../recipes/custom-filter-for-repose.html">Custom Filter for Repose</a></li>
+            <li><a class="" href="../recipes/docker.html">Docker</a></li>
+            <li><a class="" href="../recipes/performance-best-practices.html">Performance Best Practices</a></li>
+            <li><a class="" href="../recipes/role-based-access-control.html">Role Based Access Control</a></li>
+            <li><a class="" href="../recipes/running-valve.html">Running Valve</a></li>
+            <li><a class="" href="../recipes/vagrant.html">Vagrant</a></li>
+            <li><a class="" href="../recipes/valve-installation.html">Valve Installation</a></li>
+            <li><a class="" href="../recipes/war-installation.html">WAR Installation</a></li>
+            <li><a class="" href="../recipes/echo-server.html">Echo Server</a></li>
+            <li><a class="" href="../recipes/rate-limiting.html">Rate Limiting</a></li>
+            <li><a class="" href="../recipes/user-access-events.html">User Access Events</a></li>
+            <li><a class="" href="../recipes/basic-authentication.html">Basic Authentication</a></li>
+            <li><a class="" href="../recipes/distributed-rate-limiting.html">Distributed Rate Limiting</a></li>
+            <li><a class="" href="../recipes/delegation.html">Delegation</a></li>
+            <li><a class="" href="../recipes/preventing-xml-bomb.html">Preventing XML bomb attacks</a></li>
+            <li><a class="" href="../recipes/api-event-flume.html">API Access Event Recording with Flume</a></li>
+            <li><a class="" href="../recipes/xsd-versioning.html">XSD Versioning Guidelines</a></li>
+            <li><a class="" href="../recipes/client-authentication.html">SSL/TLS Client Authentication</a></li>
+            <li><a class="" href="../recipes/glassfish-setup.html">Glassfish Setup</a></li>
+            <li><a class="" href="../recipes/tomcat-setup.html">Tomcat Setup</a></li>
+            <li><a class="" href="../recipes/http-container-attributes.html">HTTP Container Attributes</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Filters
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../filters/index.html">Overview</a></li>
+            <li><a class="" href="../filters/add-header.html">Add Header Filter</a></li>
+            <li><a class="" href="../filters/api-validator.html">API Validator Filter</a></li>
+            <li><a class="" href="../filters/body-extractor-to-header.html">Body Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/body-patcher.html">Body Patcher Filter</a></li>
+            <li><a class="" href="../filters/compression.html">Compression Filter</a></li>
+            <li><a class="" href="../filters/content-type-stripper.html">Content Type Stripper Filter</a></li>
+            <li><a class="" href="../filters/cors.html">CORS Filter</a></li>
+            <li><a class="" href="../filters/derp.html">Delegation Response Processor (DeRP) Filter</a></li>
+            <li><a class="" href="../filters/destination-router.html">Destination Router Filter</a></li>
+            <li><a class="" href="../filters/echo.html">Echo Filter</a></li>
+            <li><a class="" href="../filters/exception.html">Exception Filter</a></li>
+            <li><a class="" href="../filters/forwarded-proto.html">Forwarded Protocol Filter</a></li>
+            <li><a class="" href="../filters/header-normalization.html">Header Normalization filter</a></li>
+            <li><a class="" href="../filters/header-translation.html">Header Translation Filter</a></li>
+            <li><a class="" href="../filters/header-user.html">Header User Filter</a></li>
+            <li><a class="" href="../filters/herp.html">Highly Efficient Record Processor (HERP) Filter</a></li>
+            <li><a class="" href="../filters/ip-user.html">IP User Filter</a></li>
+            <li><a class="" href="../filters/iri-validator.html">IRI Validator Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2.html">Keystone v2 Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2-basic-auth.html">Keystone v2 Basic Auth Filter</a></li>
+            <li><a class="" href="../filters/merge-header.html">Merge Header Filter</a></li>
+            <li><a class="" href="../filters/openstack-identity-v3.html">Openstack Identity v3 Filter</a></li>
+            <li><a class="" href="../filters/rackspace-auth-user.html">Rackspace Auth User Filter</a></li>
+            <li><a class="" href="../filters/rate-limiting.html">Rate Limiting Filter</a></li>
+            <li><a class="" href="../filters/saml-policy.html">SAML Policy Translation Filter</a></li>
+            <li><a class="" href="../filters/scripting.html">Scripting Filter</a></li>
+            <li><a class="" href="../filters/simple-rbac.html">Simple Role Based Access Control (RBAC) Filter</a></li>
+            <li><a class="" href="../filters/slf4j-http-logging.html">SFL4J HTTP Logging Filter</a></li>
+            <li><a class="" href="../filters/translation.html">Translation Filter</a></li>
+            <li><a class="" href="../filters/uri-normalization.html">URI Normalization Filter</a></li>
+            <li><a class="" href="../filters/uri-stripper.html">URI Stripper Filter</a></li>
+            <li><a class="" href="../filters/uri-user.html">URI User Filter</a></li>
+            <li><a class="" href="../filters/url-extractor-to-header.html">URL Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/valkyrie-authorization.html">Valkyrie Authorization Filter</a></li>
+            <li><a class="" href="../filters/versioning.html">Versioning Filter</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-right"></span>Services
+      </a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../services/index.html">Overview</a></li>
+            <li><a class="" href="../services/atom-feed-consumption.html">Atom Feed Consumption Service</a></li>
+            <li><a class="" href="../services/datastores.html">Datastores</a></li>
+            <li><a class="" href="../services/health-check.html">Health Check service</a></li>
+            <li><a class="" href="../services/http-connection-pool.html">HTTP Connection Pool service</a></li>
+            <li><a class="" href="../services/metrics.html">Metrics Service</a></li>
+            <li><a class="" href="../services/phone-home.html">Phone Home Service</a></li>
+            <li><a class="" href="../services/response-messaging.html">Response Messaging service</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Performance Testing</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This version of the docs is a work in progress.
+If you don&#8217;t see what you are looking for check the legacy <a href="http://wiki.openrepose.org">wiki</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Performance testing is a method of testing various aspects of Repose in order to collect performance data.
+Performance data can be used to determine the overhead of the aspects in question, both at a system resource level as well as at a response time level.</p>
+</div>
+<div class="paragraph">
+<p>To performance test Repose, and collect the resulting data for analysis, the <a href="#framework">Framework</a> is used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="methodology"><a class="anchor" href="#methodology"></a>Methodology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In an attempt to provide the most meaningful data possible, the following test cases will be covered by independent tests:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The simplest (i.e., passthrough) Repose deployment.</p>
+</li>
+<li>
+<p>Every Repose filter.</p>
+</li>
+<li>
+<p>A relatively complex Repose deployment.</p>
+</li>
+<li>
+<p>Common Repose deployments (e.g., RBAC).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="framework"><a class="anchor" href="#framework"></a>Framework</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="design"><a class="anchor" href="#design"></a>Design</h3>
+<div class="paragraph">
+<p>The overall design of the automatic performance testing framework can be outlined succinctly by the following diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="data:image/png;base64,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Bx+YLl26mPfff7/g4KROEKWPauqxEBACQkAICAEhEBcC48aNM8OGDTNjx46VIIprEHRfISAEhIAQEAJCIF4EEENYh4YOHSpBFO9Q6O5CQAgIASEgBIRAXAj069fPtG3b1vTu3VuCKK5B0H2FgBAQAkJACAiBeBHwc8KMHiqGKN5x0t2FgBAQAkJACAiBMiFw1FFHmY022sgceeSRRe8gQVQUIlUQAkJACAgBISAE0obAbbfdZl/C/tJLL/nqugSRL5hUSQgIASEgBISAEEgLAliGXn75Zd9iSC6ztIys+ikEhIAQEAJCQAjkRIA8Q5wi49+vvvrKDBw40Fx77bW+3GTeBmvCQnTllVeaKVOmWLAAbbnllsv77jLxTQgIASEgBISAEEgHArxqa9q0aWbVVVc1q6yyill99dWLnibL92RVLYiuu+46g9nsrLPOMksvvbQFy4GWjqFWL4WAEBACQkAICIFKIFC1gmjjjTe2keWYzVSEgBAQWNq6HQAAHXtJREFUAkJACAgBIVAIgaoURIihE0880Rx44IEafSEgBISAEBACQkAIFEWg6gQRbjIiy2UZKjr2qiAEhIAQEAJCQAj8H4GqE0R+M1KKAUJACAgBISAEhIAQcAhUlSDiNNkXX3xhLrjgAo2wEKhZBGbMmGEaGhrM4osvXrMY6MGFgBAQAkERqCpBdMIJJ9hTZMcff3xQHFRfCKQegVdffdX06NHDfPTRR/ZZllxySXPPPfeYjh07RvJss2bNsgcV7rjjDtO+fXtfbZ5++unm4osvblT3xhtvNAcffLCZZ555Crbx008/mQ8//NBssMEGvu5FpcMPP9zQfq7y4osvGuILVYSAEBACuRCoKkG0yy67WDHUpUsXjbYQqCkEnFg5+eSTzd57723+/PNPQ9r64447zlpNl1lmmZLxmDt3rll//fXNiBEjfAsLBEqrVq3MKaecYu//zjvvGL6n/I5QwsWdryCGunbtat58882C9bzXT5061cyePduAR+fOnc3VV19txRt9X3bZZc1CCy1UMg5qQAgIgepEoKoEEdahcePG2XxDKkKglhAg6Sj894ofRFHv3r2t+OA7gVjg/6NGjbIbh/r6etO6dWvz2GOPmTfeeMMKib59+5q99trLcDhh0UUXNV9++aXp06ePefjhh82xxx5rBg8ebLC0YCm64YYbMplgb731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EAJpR6CJICKGYIMNNjC8+VtiqLzD6xabdu3amVdffTVQbNasWbNMhw4dzOuvv57pZOfOna07bqmllsrb8f3228+ccsopNjj+sMMOsy+vnWeeeQo+aK57ccEVV1xhevfuXV6Q8rQunlYO9lJ4Wrle6k5CQAgIgdIQaCKIOE3GItm+ffvMEfvSbqGr8yHgDWAl4JrTZ34LIoUxGjlypGnTpo2ZO3euGTRokD0JePvtt+cVOfvss4859dRTrfjq0aOHFWJ+BBH3uvPOO03r1q3tvSiLLbaY/T2OIp5WDvVSeFq5XupOQkAICIHSEGgkiDhBtvvuu1vrARYinSYrDVw/V4MzWYI5kk+OIr8vwnWC6JVXXjELLLCAvdW7775r9txzT/PCCy+Yo48+2lx99dVmwQUXNI899pj56quvzIEHHmhyCSIE1EEHHWTbuPXWW209b3H34oRcy5YtG3126aWXmp9++snei/tPmzbNPsNHH31kLVB8vvDCC9t/v/76a3PvvfeaVVdd1YoyLFVYuB588EGz6667+oHL1hFPfUMVWcWwPI2sA2pICAgBIVBmBDKCyOuCGDJkiH1LvUplEOB9cCeddJLBdTZ16lRfN0WkrL322tZFhqXm119/Needd55p27atTQS52mqrWbHBZwgeBBECJFsQYWHafvvtrTXwzz//NOuss4558cUXzQorrJDpB/faaKONrEVpoYUWsn/HSkSfjzvuOPPII49YUcO9l1xySfP000+bjTfe2Jxzzjnm888/N7fddps54ogjzDfffGNPKl5zzTW2j1gip0+fbtv94IMPMm0XAkA89UWPslQKw9OydESNCgEhIATKgEBGELnJTq6yMqDso0msRFhg/IpRJ1KWX355a9H7+eefbZ4jLEPNmze37rTnnnuuqCB69NFHzdJLL21zImEZWn311c1yyy3XxEKEIDr55JOtaEE41dXVWWsicWb8fZNNNjFjx4411113nbXgULAWcR2WI/p15pln2vg0RBii66KLLrLCChHm+loMKvG0GELl/TwoT8vbG7UuBISAEIgOgYwgWmmllaybLIjbJrpuqCXnBvJrJcrlMnMous8QHbirECCffvppTgsRMURYaZ599lnrzsKa8+abb1rrU3Z7Xvec+8xZnBBEWKKef/55M3To0IwgIpkn7SG4cJO5es5i5frqVxCJp/F+V4LyNN7e6u5CQAgIAf8IWEGE64IgVV7WiihSiQcBxBAvgyW4utirUQoJCdxnK6+8snVd4fraeeedrVuKE2HZLjMsOhdccIG16mD12W677ezvW2yxRRNBlEu0eAXR+++/b7baaivrquOk20033WQtP9wjWziFEUTiaTy8zL5rEJ4mo8fqhRAQAkKgOAJWELljtbyN3b3JvvilqhE1AmDPW9r9pDsoJIgaGhrMJZdcYk477TTbRYKbcVUhiLKP3ePmQjA988wztu5mm21mxo0b1yigvtC9XHvEDFFuuOEGGy9EwfWGlQqXnLceliiEHzFNQSxE4mnUjAvXXhCehruDrhICQkAIVB4BK4icGwL3CTECSStYPNxJqqT1Lcr+OAsIY8BYlFo4/UU8UfbJsFztfv/99+b333+3QdGlFuKZZs6caZZYYglrdYqqxM1T8ASjFi1alMzHNHM6ap5GxQ+1IwSEgBAoBYG6GTNmNHASiYJloRLFBQST12a99dbLe0sWoB122MFaE+6//36zxx572ABd198gfcUqsddeezW65PTTTzf9+vWzcTb0aZtttrEWDW/hGPoBBxwQ6cJeqN9OQMyYMSNv2gOO0YNLLRVOl1Wapw7f3377zfTt2zcTG8XfsbphhSOgPUhxnIbH8DoMl4Pcr1x1/fC0XPdWu0JACAiBciBQN2HChAbihwh+ZedXieKOjN999932eHa+wlFs+saRcATClltuWZIgOuOMM+xJqGbNmhksIocffrj55ZdfbNAvJ6c23XRTm9xwww03tJYAYmG6du1qA45xJVWiEDs0adKknHFEAwcOtC61+eef3+JRS8VZJSrJU/CFB4zJH3/8YVMG4Abk9FzPnj2tK5BDCPPOO6/voYDT8Ovtt99ucprPdyMJqFiIpwnonrogBISAEAiMQN2oUaMaOD7drVu3zHHpwK0EvMAriNZdd11z/PHHm5122skQw8RCwSLTpUsXe6ybwGCEy9577237yM6aQF122gTqUoh54XcEEwsVSQCJmaEucTPXXnutdUFdddVV5oknnshYe7iGehz/JjEgJ6vGjBmTOWGFSOLzwYMH2zibShS30HhP+yGEyDFEYfHlebKTJ1aib3Hew51uqiRPeV6scVgIsy2TH374odlll10sFxGoWJB23HFHm5cJoU9SUyyQjCMn63jNCakQ4DR8hc83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" alt="Performance Test Framework Design Diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Put into words, a code change in the Repose GitHub repository will trigger a Jenkins job to run.
+The Jenkins job will run the Ansible playbooks for all defined test cases.
+The Ansible playbooks, in turn, will allocate the necessary cloud resources, and begin executing the Gatling simulations for each test case.
+As Gatling runs, it will pipe the performance data it captures out to InfluxDB.
+Once Gatling execution completes, cloud resources will be cleaned up, and the Ansible playbook will finish executing.
+At some point, Grafana will query InfluxDB to retrieve the performance data which will be made available in the form of one or more dashboards.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-new-test"><a class="anchor" href="#creating-a-new-test"></a>Creating a New Test</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Certain general directories will be subdivided into test categories.
+If a directory is subdivided, new files and directories should be placed in the appropriate category.
+For example, the <code>repose-aggregator/tests/performance-tests/inventories/</code> directory contains the <code>filters/</code> and <code>use-cases/</code> sub-directories.
+A new filter inventory, then, should be placed under the <code>filters/</code> directory rather than the parent <code>inventories/</code> directory.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create an <a href="http://docs.ansible.com/ansible/intro_inventory.html">Ansible inventory</a> for the new test.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create a new inventory directory under under the <code>repose-aggregator/tests/performance-tests/inventories/</code> directory of the Repose project.
+The name of the new directory should describe the feature under test.</p>
+</li>
+<li>
+<p>Add <a href="http://docs.ansible.com/ansible/intro_inventory.html#splitting-out-host-and-group-specific-data">group variables</a> in a <code>group_vars/</code> directory under your new inventory directory.
+Group variables should generally be placed in a file named <code>all</code> to make them usable by all host groups.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Certain variables (e.g., <code>gatling.test.name</code>) must be defined.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Add <a href="http://docs.ansible.com/ansible/intro_inventory.html#hosts-and-groups">a <code>hosts</code> file</a> under your new inventory directory.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Only <code>localhost</code> need be defined in the <code>hosts</code> file&#8201;&#8212;&#8201;all other hosts will be added dynamically as the Playbook runs.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add Repose configuration files.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create new directories under <code>repose-aggregator/tests/performance-tests/roles/repose/</code> with the same names and hierarchy as the previously created inventory directory.
+Template files should be placed under the <code>templates/</code> directory while raw configuration files should be placed under the <code>files/config/</code> directory.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Create a <a href="http://gatling.io/docs/current/general/concepts/#simulation">Gatling simulation</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create new directories under <code>repose-aggregator/tests/performance-tests/roles/gatling/</code> with the same names and hierarchy as the previously created inventory directory.</p>
+</li>
+<li>
+<p>Write a Gatling simulation.
+This code will be responsible for generating test traffic and, ultimately, performance test data.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If necessary, add mock services under <code>repose-aggregator/tests/performance-tests/roles/repose/mocks/</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The inventory directory created in the steps above is not strictly necessary.
+While it is the conventional way of defining a new test, Ansible can be invoked using any directory as the inventory directory.
+In fact, the directory that we have created will only be needed when we invoke the Ansible Playbook.
+The command in "How To Run Performance Tests Using Vagrant" shows the Ansible Playbook being invoked with the "-i" option, which allows a user to specify the inventory directory.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ansible Playbooks support Jinja2 templates.
+These templates allow users to add dynamic content to files.
+Most if not all of the configuration files that were referred to above will be Jinja2 files, distinguishable by the additional <code>.j2</code> file extension.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-a-test-automatically"><a class="anchor" href="#running-a-test-automatically"></a>Running a Test Automatically</h3>
+<div class="paragraph">
+<p>A Jenkins job is triggered any time that code on the master branch of the <a href="https://github.com/rackerlabs/repose">Repose Git Repository</a> changes.
+The Jenkins job will run the performance tests automatically, and publish the results.
+<a href="#design">Design</a> describes the full automated process in more detail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-a-test-manually"><a class="anchor" href="#running-a-test-manually"></a>Running a Test Manually</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">TODO</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add the link to the Puppet manifest.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set up your environment.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We use Puppet to manage our performance test environment.
+The details of our environment can be found in our [Puppet manifest].
+If you have <a href="https://puppet.com/">Puppet</a> installed, you can download our manifest and re-create our environment by running <code>puppet apply</code> directly on the downloaded file.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Clone the <a href="https://github.com/rackerlabs/repose">Repose GitHub repository</a> from Github.<br>
+<code>git clone <a href="https://github.com/rackerlabs/repose.git" class="bare">https://github.com/rackerlabs/repose.git</a></code></p>
+</li>
+<li>
+<p>Navigate to the performance test directory in the project.<br>
+<code>cd repose/repose-aggregator/tests/performance-tests</code></p>
+</li>
+<li>
+<p>Run the <code>start_test.yml</code> Ansible playbook.<br>
+This playbook will create the necessary Cloud resources, deploy test resources to them, and execute the Gatling simulation.
+When running the playbook, you may specify which test to run and what configuration to override for that test.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \ <i class="conum" data-value="1"></i><b>(1)</b>
+  -i inventories/filters/saml \ <i class="conum" data-value="2"></i><b>(2)</b>
+  -e '{gatling: {test: {params: {duration_in_min: 15, saml: {num_of_issuers: 2}}}}}' \ <i class="conum" data-value="3"></i><b>(3)</b>
+  -vvvv <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Run the <code>start_test.yml</code> playbook.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Use the SAML inventory.
+The inventory used dictates the test to run.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Override the configuration for the two specified properties using YAML syntax.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Provide very verbose output.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>View the <a href="#results">Results</a>.</p>
+</li>
+<li>
+<p>Clean up cloud resources (i.e., cloud servers and load balancers).<br>
+<code>ansible-playbook stop_test.yml -i inventories/filters/saml -vvvv</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="results"><a class="anchor" href="#results"></a>Results</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="grafana-dashboard"><a class="anchor" href="#grafana-dashboard"></a>Grafana Dashboard</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">TODO</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a link to our Grafana instance.</p>
+</li>
+<li>
+<p>Describe the dashboard(s).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Grafana serves as the user interface to performance test data.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="html-report"><a class="anchor" href="#html-report"></a>HTML Report</h3>
+<div class="paragraph">
+<p>After test execution has completed, Gatling will generate an HTML report.
+The report can be found inside an archive residing in the <code>/root</code> directory with a file name like <code>gatling-results-repose-1487613066553.tar.gz</code>.
+The exact file name will be included in the output of the <code>Fetch the Gatling results</code> task which will resemble the following snippet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>changed: [perf_saml-testsuite01] =&gt; {
+    "changed": true,
+    "checksum": "4abdc6827e21343904c5744df42c7da57db8c978",
+    "dest": "/root/gatling-results-repose-1487613066553.tar.gz", <i class="conum" data-value="1"></i><b>(1)</b>
+    "invocation": {
+        "module_args": {
+            "dest": "/root/",
+            "flat": true,
+            "src": "/root/gatling-results-repose-1487613066553.tar.gz"
+        },
+        "module_name": "fetch"
+    },
+    "md5sum": "5441b5b8229434a79c4546c74b85338a",
+    "remote_checksum": "4abdc6827e21343904c5744df42c7da57db8c978",
+    "remote_md5sum": null
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This is the file name.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After the report archive is located, the content must be extracted before the report can be viewed.
+That can be done with a command like the following:<br>
+<code>tar xvf /root/gatling-results-repose-1487613066553.tar.gz</code></p>
+</div>
+<div class="paragraph">
+<p>Once the report has been extracted, it can be viewed in the <code>index.html</code> file.
+Using a web browser will provide the best viewing experience.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>At the time of writing, a Cloud server is being used as a "master" node to coordinate the performance tests.
+For that reason, the Ansible task which fetches the results from Gatling can and will place those results in the <code>/root</code> directory on the node which launched the playbook.
+Issues may arise if the Ansible playbook is run in an environment where the <code>/root</code> directory cannot be written to.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="debugging"><a class="anchor" href="#debugging"></a>Debugging</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="running-gatling-manually"><a class="anchor" href="#running-gatling-manually"></a>Running Gatling Manually</h3>
+<div class="paragraph">
+<p>If needed, Gatling can be run manually using a command like the following while working in the <code>repose-aggregator/tests/performance-tests/roles/gatling/files/simulations</code> directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>gatling -s filters.saml.SamlSimulation <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>filters.saml.SamlSimulation</code> is the package-qualified class name of the simulation to run.
+It should be replaced with the FQCN of the simulation that should be run.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-gatling-manually"><a class="anchor" href="#configuring-gatling-manually"></a>Configuring Gatling Manually</h3>
+<div class="paragraph">
+<p>Files and directories of interest:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>conf/logback.xml</code> - Lets you turn on debug logging; useful to see the request and response data.</p>
+</li>
+<li>
+<p><code>conf/application.conf</code> - The configuration file read by the simulations.</p>
+</li>
+<li>
+<p><code>results/</code> - Contains all of the results.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional-information"><a class="anchor" href="#additional-information"></a>Additional Information</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="warmup-duration"><a class="anchor" href="#warmup-duration"></a>Warmup Duration</h3>
+<div class="paragraph">
+<p>Run the simple use-case test for 15 minutes with a 5 minute warmup (20 minutes total):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/use-cases/simple \
+  -e '{gatling: {test: {params: {duration_in_min: 15, warmup_duration_in_min: 5}}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="skipping-repose-or-origin-service-tests"><a class="anchor" href="#skipping-repose-or-origin-service-tests"></a>Skipping Repose or Origin Service Tests</h3>
+<div class="paragraph">
+<p>By default, both the Repose test and the origin service test (i.e., Repose is bypassed) are run.
+You can use Ansible tags to specify that only one of those tests should be run.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  --tags "repose" \
+  -vvvv</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  --tags "origin" \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-server-flavor"><a class="anchor" href="#cloud-server-flavor"></a>Cloud Server Flavor</h3>
+<div class="paragraph">
+<p>You can specify which cloud server flavor to use in the configuration overrides.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{cloud: {server: {repose: {flavor: performance1-4}}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="increasing-timeout-for-repose-startup"><a class="anchor" href="#increasing-timeout-for-repose-startup"></a>Increasing Timeout for Repose Startup</h3>
+<div class="paragraph">
+<p>By default, the Repose start task will wait 5 minutes for Repose to start up.
+If you expect Repose to take longer to start (e.g., due to a large WADL), you can increase this timeout using a command like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{repose: {service: {start_timeout_in_sec: 900}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saxon"><a class="anchor" href="#saxon"></a>Saxon</h3>
+<div class="paragraph">
+<p>To get Repose to use Saxon, add a <code>saxon.lic</code> file to the <code>roles/repose/files/</code> directory and pass in the following configuration override:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{repose: {systemd_opts: {use_saxon: true}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jvm-options-heap-size-garbage-collection-etc"><a class="anchor" href="#jvm-options-heap-size-garbage-collection-etc"></a>JVM Options (Heap size, Garbage Collection, etc.)</h3>
+<div class="paragraph">
+<p>You can set the JVM Options (<code>JAVA_OPTS</code>) used by Repose by setting the following configuration override:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{repose: {systemd_opts: {java_opts: "-Xmx2g -Xms2g -XX:+UseG1GC -XX:+UseStringDeduplication"}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="automatic-cloud-resource-cleanup"><a class="anchor" href="#automatic-cloud-resource-cleanup"></a>Automatic Cloud Resource Cleanup</h3>
+<div class="paragraph">
+<p>An Ansibile playbook has been defined that will run a performance test and clean up after itself.
+To run that playbook, switch <code>start_test.yml</code> with <code>site.yml</code> when running a performance test.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook site.yml \
+  -i inventories/filters/saml \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-a-test-again"><a class="anchor" href="#running-a-test-again"></a>Running a Test Again</h3>
+<div class="paragraph">
+<p>You can re-run a test using the same cloud resources by simply running the <code>start_test.yml</code> playbook again.
+You can even specify different configuration overrides in subsequent runs, although there are some limitations.
+For example, you can enable Saxon for a subsequent run, but you can&#8217;t disable it afterwards.
+Also, if you don&#8217;t want the Repose JVM already warmed up from the previous run, you should have Ansible restart the Repose service.
+This feature is considered experimental.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{repose: {service: {state: restarted}, systemd_opts: {use_saxon: true}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="gatling-output-directory-name"><a class="anchor" href="#gatling-output-directory-name"></a>Gatling Output Directory Name</h3>
+<div class="paragraph">
+<p>You can specify the base name of the directory containing the Gatling results in the configuration overrides.
+For example, if you wanted the base name <code>custom-base-name</code> (resulting in a directory name resembling <code>custom-base-name-repose-1487812914968</code>), you would run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{gatling: {results: {output_dir: custom-base-name}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-parallel-tests"><a class="anchor" href="#running-parallel-tests"></a>Running Parallel Tests</h3>
+<div class="paragraph">
+<p>Running a performance test with a unique naming prefix enables you to run a particular inventory multiple times simultaneously (each run requires a unique prefix):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook start_test.yml \
+  -i inventories/filters/saml \
+  -e '{cloud: {naming_prefix: perf_saml_many_issuers}, gatling: {test: {params: {saml: {num_of_issuers: 100}}}}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re using the <code>stop_test.yml</code> playbook to clean up your cloud resources, you&#8217;ll need to include the unique prefix to ensure the correct resources are deleted.
+If the prefix is not specified, the wrong cloud resources or no cloud resources could end up being deleted, and in both cases, no error will be returned (due to idempotency).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ansible-playbook stop_test.yml \
+  -i inventories/filters/saml \
+  -e '{cloud: {naming_prefix: perf_saml_many_issuers}}' \
+  -vvvv</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="/_javascripts/include-html.js" type="text/javascript"></script>
+  <script>includeHTML();</script>
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

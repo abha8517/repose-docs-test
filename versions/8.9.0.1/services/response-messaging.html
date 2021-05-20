@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>8.9.0.1 | Services | Response Messaging service</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/_stylesheets/asciibinder.css" >
+  <link rel="stylesheet" href="/_stylesheets/repose.css" >
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body onload="selectVersion('8.9.0.1');">
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a class="navbar-brand" href="http://www.openrepose.org/">
+          <img alt="OpenRepose" src="/_images/repose-logo.png" align="bottom">
+        </a>
+      </li>
+      <li class="sitename">
+        <a href="../../index.html">
+          Home
+        </a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="/versions/8.9.0.1/welcome/index.html">
+          Repose
+        </a>
+        <select id="version-selector" onchange="versionSelector(this);" w3-include-html="/_includes/versions.html">
+        </select>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../services/index.html">Services</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Response Messaging service
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <a class="navbar-search" href="/versions/search.html">
+          <span class="glyphicon glyphicon-search"/>
+          Search
+        </a>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Welcome to Repose
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+            <li><a class="" href="../welcome/troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../welcome/release-notes.html">Release Notes</a></li>
+            <li><a class="" href="../welcome/style-guide.html">Style Guide</a></li>
+            <li><a class="" href="../welcome/faq.html">FAQ</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Architecture
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../architecture/index.html">Overview</a></li>
+            <li><a class="" href="../architecture/configuration.html">Configuration</a></li>
+            <li><a class="" href="../architecture/container.html">Container</a></li>
+            <li><a class="" href="../architecture/packages.html">Packages</a></li>
+            <li><a class="" href="../architecture/system-model.html">System Model</a></li>
+            <li><a class="" href="../architecture/performance.html">Performance</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Recipes
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../recipes/index.html">Overview</a></li>
+            <li><a class="" href="../recipes/quick-start.html">Quick Start</a></li>
+            <li><a class="" href="../recipes/getting-started.html">Getting Started</a></li>
+            <li><a class="" href="../recipes/custom-filter-for-repose.html">Custom Filter for Repose</a></li>
+            <li><a class="" href="../recipes/docker.html">Docker</a></li>
+            <li><a class="" href="../recipes/performance-best-practices.html">Performance Best Practices</a></li>
+            <li><a class="" href="../recipes/role-based-access-control.html">Role Based Access Control</a></li>
+            <li><a class="" href="../recipes/running-valve.html">Running Valve</a></li>
+            <li><a class="" href="../recipes/valve-installation.html">Valve Installation</a></li>
+            <li><a class="" href="../recipes/war-installation.html">WAR Installation</a></li>
+            <li><a class="" href="../recipes/echo-server.html">Echo Server</a></li>
+            <li><a class="" href="../recipes/rate-limiting.html">Rate Limiting</a></li>
+            <li><a class="" href="../recipes/multi-tenant.html">Multi Tenant Authorization</a></li>
+            <li><a class="" href="../recipes/user-access-events.html">User Access Events</a></li>
+            <li><a class="" href="../recipes/basic-authentication.html">Basic Authentication</a></li>
+            <li><a class="" href="../recipes/delegation.html">Delegation</a></li>
+            <li><a class="" href="../recipes/preventing-xml-bomb.html">Preventing XML bomb attacks</a></li>
+            <li><a class="" href="../recipes/api-event-flume.html">API Access Event Recording with Flume</a></li>
+            <li><a class="" href="../recipes/xsd-versioning.html">XSD Versioning Guidelines</a></li>
+            <li><a class="" href="../recipes/client-authentication.html">SSL/TLS Client Authentication</a></li>
+            <li><a class="" href="../recipes/functional-test-framework.html">Functional Test Framework</a></li>
+            <li><a class="" href="../recipes/glassfish-setup.html">Glassfish Setup</a></li>
+            <li><a class="" href="../recipes/tomcat-setup.html">Tomcat Setup</a></li>
+            <li><a class="" href="../recipes/http-container-attributes.html">HTTP Container Attributes</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Filters
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../filters/index.html">Overview</a></li>
+            <li><a class="" href="../filters/add-header.html">Add Header Filter</a></li>
+            <li><a class="" href="../filters/api-validator.html">API Validator Filter</a></li>
+            <li><a class="" href="../filters/attribute-mapping-policy-validation.html">Attribute Mapping Policy Validation filter</a></li>
+            <li><a class="" href="../filters/body-extractor-to-header.html">Body Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/body-patcher.html">Body Patcher Filter</a></li>
+            <li><a class="" href="../filters/compression.html">Compression Filter</a></li>
+            <li><a class="" href="../filters/content-type-stripper.html">Content Type Stripper Filter</a></li>
+            <li><a class="" href="../filters/cors.html">CORS Filter</a></li>
+            <li><a class="" href="../filters/derp.html">Delegation Response Processor (DeRP) Filter</a></li>
+            <li><a class="" href="../filters/destination-router.html">Destination Router Filter</a></li>
+            <li><a class="" href="../filters/echo.html">Echo Filter</a></li>
+            <li><a class="" href="../filters/exception.html">Exception Filter</a></li>
+            <li><a class="" href="../filters/forwarded-proto.html">Forwarded Protocol Filter</a></li>
+            <li><a class="" href="../filters/header-normalization.html">Header Normalization filter</a></li>
+            <li><a class="" href="../filters/header-translation.html">Header Translation Filter</a></li>
+            <li><a class="" href="../filters/header-user.html">Header User Filter</a></li>
+            <li><a class="" href="../filters/herp.html">Highly Efficient Record Processor (HERP) Filter</a></li>
+            <li><a class="" href="../filters/ip-user.html">IP User Filter</a></li>
+            <li><a class="" href="../filters/iri-validator.html">IRI Validator Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2.html">Keystone v2 Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2-authorization.html">Keystone v2 Authorization Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2-basic-auth.html">Keystone v2 Basic Auth Filter</a></li>
+            <li><a class="" href="../filters/merge-header.html">Merge Header Filter</a></li>
+            <li><a class="" href="../filters/openstack-identity-v3.html">Openstack Identity v3 Filter</a></li>
+            <li><a class="" href="../filters/rackspace-auth-user.html">Rackspace Auth User Filter</a></li>
+            <li><a class="" href="../filters/rate-limiting.html">Rate Limiting Filter</a></li>
+            <li><a class="" href="../filters/regex-rbac.html">RegEx Role Based Access Control (RBAC) Filter</a></li>
+            <li><a class="" href="../filters/saml-policy.html">SAML Policy Translation Filter</a></li>
+            <li><a class="" href="../filters/scripting.html">Scripting Filter</a></li>
+            <li><a class="" href="../filters/simple-rbac.html">Simple Role Based Access Control (RBAC) Filter</a></li>
+            <li><a class="" href="../filters/slf4j-http-logging.html">SFL4J HTTP Logging Filter</a></li>
+            <li><a class="" href="../filters/tenant-culling.html">Tenant Culling Filter</a></li>
+            <li><a class="" href="../filters/translation.html">Translation Filter</a></li>
+            <li><a class="" href="../filters/uri-normalization.html">URI Normalization Filter</a></li>
+            <li><a class="" href="../filters/uri-stripper.html">URI Stripper Filter</a></li>
+            <li><a class="" href="../filters/uri-user.html">URI User Filter</a></li>
+            <li><a class="" href="../filters/url-extractor-to-header.html">URL Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/valkyrie-authorization.html">Valkyrie Authorization Filter</a></li>
+            <li><a class="" href="../filters/versioning.html">Versioning Filter</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-down"></span>Services
+      </a>
+      <ul id="topicGroup4" class="collapse in list-unstyled">
+            <li><a class="" href="../services/index.html">Overview</a></li>
+            <li><a class="" href="../services/atom-feed-consumption.html">Atom Feed Consumption Service</a></li>
+            <li><a class="" href="../services/datastores.html">Datastores</a></li>
+            <li><a class="" href="../services/health-check.html">Health Check service</a></li>
+            <li><a class="" href="../services/http-connection-pool.html">HTTP Connection Pool service</a></li>
+            <li><a class="" href="../services/logging.html">Logging Service</a></li>
+            <li><a class="" href="../services/metrics.html">Metrics Service</a></li>
+            <li><a class="" href="../services/open-tracing.html">OpenTracing Service</a></li>
+            <li><a class="" href="../services/phone-home.html">Phone Home Service</a></li>
+            <li><a class=" active" href="../services/response-messaging.html">Response Messaging service</a></li>
+            <li><a class="" href="../services/uri-redaction.html">URI Redaction service</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-right"></span>Developer
+      </a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li><a class="" href="../developer/index.html">Overview</a></li>
+            <li><a class="" href="../developer/docker.html">Docker</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Response Messaging service</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Response Messaging service enables <strong>Repose</strong> to conditionally overwrite the response body with a pre-configured message.</p>
+</div>
+<div class="paragraph">
+<p>This service may be used to provide consistent error messages to users.
+For example, if a user asks for JSON, but the origin service normally returns a plain text message, this service can be configured to pack the plain text message into a JSON envelope.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Configuration:</strong> response-messaging.cfg.xml</p>
+</li>
+<li>
+<p><strong>Released:</strong> v1.0</p>
+</li>
+<li>
+<p><a href="../schemas/response-messaging.xsd">Schema</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="exhaustive"><a class="anchor" href="#exhaustive"></a>Exhaustive</h3>
+<div class="paragraph">
+<p>This configuration uses all available options.</p>
+</div>
+<div class="listingblock">
+<div class="title">response-messaging.cfg.xml</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span style="color:#579">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+
+<span style="color:#070;font-weight:bold">&lt;response-messaging</span> <span style="color:#b48">xmlns</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://docs.openrepose.org/repose/response-messaging/v1.0</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;status-code</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">four-one-eight</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="1"></i><b>(1)</b>
+        <span style="color:#b48">code-regex</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">418</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="2"></i><b>(2)</b>
+        <span style="color:#b48">overwrite</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ALWAYS</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span> <i class="conum" data-value="3"></i><b>(3)</b>
+        <span style="color:#070;font-weight:bold">&lt;message</span> <i class="conum" data-value="4"></i><b>(4)</b>
+            <span style="color:#b48">media-type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">*/*</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="5"></i><b>(5)</b>
+            <span style="color:#b48">content-type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/xml</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span> <i class="conum" data-value="6"></i><b>(6)</b>
+            <span style="font-weight:bold;color:#666">&lt;![CDATA[</span>&lt;I&gt; am a teapot&lt;/I&gt;<span style="font-weight:bold;color:#666">]]&gt;</span> <i class="conum" data-value="7"></i><b>(7)</b>
+        <span style="color:#070;font-weight:bold">&lt;/message&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;/status-code&gt;</span>
+
+    <span style="color:#070;font-weight:bold">&lt;status-code</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">518</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;message</span> <span style="color:#b48">media-type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
+            <span style="color:#b48">href</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">file:///etc/repose/jsonresponsefor518</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span> <i class="conum" data-value="8"></i><b>(8)</b>
+        <span style="color:#070;font-weight:bold">&lt;/message&gt;</span>
+
+        <span style="color:#070;font-weight:bold">&lt;message</span> <span style="color:#b48">media-type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/xml</span><span style="color:#710">&quot;</span></span>
+            <span style="color:#b48">href</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">file:///etc/repose/xmlresponsefor518</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;/message&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;/status-code&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;/response-messaging&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specifies the response status code(s) for which the response message might be modified.
+This declaration is given a unique ID for service-internal identification purposes.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Declares a regular expression that must match the response status code for any response message modification to occur.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Declares that this service should always overwrite the original response message when a declared message is applied.
+<code>ALWAYS</code> will always overwrite the original response message.
+<code>IF_EMPTY</code> will only overwrite the original response message if the current response message is missing.<br>
+Default: <code>IF_EMPTY</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Defines the message that will be written to the response, if applicable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Declares a media type that must match the <code>Accept</code> of the request for any response message modification to occur.
+This attribute allows different message formats for different requested media types.
+Wildcard media types other than <code><strong>/</strong></code> are not supported in this attribute.
+A media type of <code><strong>/</strong></code> will match all requested media types.<br>
+Default: <code><strong>/</strong></code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Defines the <code>Content-Type</code> of the configured response message.
+This value will be written to the <code>Content-Type</code> header of the response.<br>
+Default: <code>text/plain</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Define the response message itself.
+<a href="#template-parameters">Template Parameters</a> may be used in the message, and will be replaced when the message is written to the response.
+XML messages should always be placed within <code>CDATA</code> tags.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Specifies the external location of a response message.
+If both the <code>message</code> element and the <code>href</code> attribute have a value, then this service will use the message in the <code>href</code> location.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="template-parameters"><a class="anchor" href="#template-parameters"></a>Template Parameters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Configured messages may contain template parameters that will be replaced when the message is written to the response.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. Template Parameters</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tab character.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Newline character.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Percent sign character.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remote IP address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local IP address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size of the response body in bytes in CLF format (i.e., substitutes <code>-</code> rather than <code>0</code> when no bytes are sent).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size of the response body in bytes.
+  <code>0</code> is substituted when no bytes are sent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time taken to serve the request, in microseconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%g</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal GUID assigned to the request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%H</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request Protocol.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remote Host.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{header}i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value of the request header identified by <code>{header}</code>.
+  Note that header names are case-insensitive.
+  For example, <code>%{X-Auth-Token}i</code> is equivalent to <code>%{x-auth-token}i</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{header type out-format}i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See above.
+  Supported <code>type</code> are: <code>DATE</code>.
+  Supported <code>out-format</code> are: <code>RFC_1123</code> and <code>ISO_8601</code>.
+  The input format will be taken to be <code>RFC_1123</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{header type out-format in-format}i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See above.
+  Supported <code>in-format</code> are: <code>RFC_1123</code> and <code>ISO_8601</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP response status message, if set.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP request method.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{header}o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value of the response header identified by <code>{header}</code>.
+  Note that header names are case-insensitive.
+  For example, <code>%{LOCATION}o</code> is equivalent to <code>%{location}o</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{header type out-format}o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See above.
+  Supported <code>type</code> are: <code>DATE</code>.
+  Supported <code>out-format</code> are: <code>RFC_1123</code> and <code>ISO_8601</code>.
+  The input format will be taken to be <code>RFC_1123</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{header type out-format in-format}o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See above.
+  Supported <code>in-format</code> are: <code>RFC_1123</code> and <code>ISO_8601</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical port of the origin service that handled the request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%q</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query string of the HTTP request.
+  If no query string exists, then the empty string will be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First line of HTTP request (e.g., <code>GET /index.html HTTP/1.1</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP response status code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time the HTTP request was received in the format <code>yyyy-MM-dd HH:mm:ss</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%{format}t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time the HTTP request was received using the specified date format.
+  The format must be a <code>SimpleDateFormat</code>.
+  The format string is limited to letters, numbers, dashes, spaces, periods, and colons.
+  For example, <code>%{yyyy-MM-dd HH:mm:ss}t</code> is a valid format and template.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time taken to serve the request, in seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%u</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remote user.
+  This value is taken from the <code>X-PP-User</code> header.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%U</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL path of the HTTP request, not including the query string.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Templates may be conditionally written for specified status codes.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 2. Conditional Templates</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%403,401U</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logs the URL path requested on responses with status codes <code>403</code> and <code>401</code> only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%\!200,304,302U</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logs the URL path requested for all responses except those with status codes: <code>200</code>, <code>304</code>, and <code>302</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>These parameters are a subset of <a href="http://httpd.apache.org/docs/2.2/mod/mod_log_config.html">Apache HTTP Logging functionality</a>.
+This service only supports this subset of Apache logging paremeters plus the listed non-standard extras.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional-information"><a class="anchor" href="#additional-information"></a>Additional Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If this service encounters a response status code and media type combination it is not configured to handle, this service will not alter the response in any way.</p>
+</div>
+<div class="paragraph">
+<p>This service will always use the first (i.e., the closest to the top of the configuration file), and only the first, matching <code>status-code</code>.
+That means that only messages defined in the first matching <code>status-code</code> are candidates for being written as the response body.</p>
+</div>
+<div class="sect2">
+<h3 id="windows-operating-system"><a class="anchor" href="#windows-operating-system"></a>Windows Operating System</h3>
+<div class="paragraph">
+<p>When running <strong>Repose</strong> in the Windows Operating System, if the response message is external to the configuration for this service, then any file location specified in the <code>href</code> attribute must be in the following format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>href="file:///C:/Users/Administrator/repose/regression-node-1/repose/node3/responsefor5xx"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Despite running in Windows, the path separator should be <code>/</code>.</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="/_javascripts/include-html.js" type="text/javascript"></script>
+  <script>includeHTML();</script>
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

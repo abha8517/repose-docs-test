@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>8.4.0.1 | Architecture | System Model</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/_stylesheets/asciibinder.css" >
+  <link rel="stylesheet" href="/_stylesheets/repose.css" >
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body onload="selectVersion('8.4.0.1');">
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a class="navbar-brand" href="http://www.openrepose.org/">
+          <img alt="OpenRepose" src="/_images/repose-logo.png" align="bottom">
+        </a>
+      </li>
+      <li class="sitename">
+        <a href="../../index.html">
+          Home
+        </a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="/versions/8.4.0.1/welcome/index.html">
+          Repose
+        </a>
+        <select id="version-selector" onchange="versionSelector(this);" w3-include-html="/_includes/versions.html">
+        </select>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../architecture/index.html">Architecture</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        System Model
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <a class="navbar-search" href="/versions/search.html">
+          <span class="glyphicon glyphicon-search"/>
+          Search
+        </a>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Welcome to Repose
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+            <li><a class="" href="../welcome/troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../welcome/release-notes.html">Release Notes</a></li>
+            <li><a class="" href="../welcome/style-guide.html">Style Guide</a></li>
+            <li><a class="" href="../welcome/faq.html">FAQ</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Architecture
+      </a>
+      <ul id="topicGroup1" class="collapse in list-unstyled">
+            <li><a class="" href="../architecture/index.html">Overview</a></li>
+            <li><a class="" href="../architecture/configuration.html">Configuration</a></li>
+            <li><a class="" href="../architecture/container.html">Container</a></li>
+            <li><a class="" href="../architecture/packages.html">Packages</a></li>
+            <li><a class=" active" href="../architecture/system-model.html">System Model</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Recipes
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../recipes/index.html">Overview</a></li>
+            <li><a class="" href="../recipes/quick-setup.html">Quick Setup</a></li>
+            <li><a class="" href="../recipes/getting-started.html">Getting Started</a></li>
+            <li><a class="" href="../recipes/custom-filter-for-repose.html">Custom Filter for Repose</a></li>
+            <li><a class="" href="../recipes/docker.html">Docker</a></li>
+            <li><a class="" href="../recipes/performance-best-practices.html">Performance Best Practices</a></li>
+            <li><a class="" href="../recipes/role-based-access-control.html">Role Based Access Control</a></li>
+            <li><a class="" href="../recipes/running-valve.html">Running Valve</a></li>
+            <li><a class="" href="../recipes/vagrant.html">Vagrant</a></li>
+            <li><a class="" href="../recipes/valve-installation.html">Valve Installation</a></li>
+            <li><a class="" href="../recipes/war-installation.html">WAR Installation</a></li>
+            <li><a class="" href="../recipes/echo-server.html">Echo Server</a></li>
+            <li><a class="" href="../recipes/rate-limiting.html">Rate Limiting</a></li>
+            <li><a class="" href="../recipes/user-access-events.html">User Access Events</a></li>
+            <li><a class="" href="../recipes/basic-authentication.html">Basic Authentication</a></li>
+            <li><a class="" href="../recipes/distributed-rate-limiting.html">Distributed Rate Limiting</a></li>
+            <li><a class="" href="../recipes/delegation.html">Delegation</a></li>
+            <li><a class="" href="../recipes/preventing-xml-bomb.html">Preventing XML bomb attacks</a></li>
+            <li><a class="" href="../recipes/api-event-flume.html">API Access Event Recording with Flume</a></li>
+            <li><a class="" href="../recipes/xsd-versioning.html">XSD Versioning Guidelines</a></li>
+            <li><a class="" href="../recipes/glassfish-setup.html">Glassfish Setup</a></li>
+            <li><a class="" href="../recipes/tomcat-setup.html">Tomcat Setup</a></li>
+            <li><a class="" href="../recipes/http-container-attributes.html">HTTP Container Attributes</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Filters
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../filters/index.html">Overview</a></li>
+            <li><a class="" href="../filters/add-header.html">Add Header Filter</a></li>
+            <li><a class="" href="../filters/api-validator.html">API Validator Filter</a></li>
+            <li><a class="" href="../filters/body-extractor-to-header.html">Body Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/body-patcher.html">Body Patcher Filter</a></li>
+            <li><a class="" href="../filters/compression.html">Compression Filter</a></li>
+            <li><a class="" href="../filters/content-type-stripper.html">Content Type Stripper Filter</a></li>
+            <li><a class="" href="../filters/cors.html">CORS Filter</a></li>
+            <li><a class="" href="../filters/derp.html">Delegation Response Processor (DeRP) Filter</a></li>
+            <li><a class="" href="../filters/destination-router.html">Destination Router Filter</a></li>
+            <li><a class="" href="../filters/echo.html">Echo Filter</a></li>
+            <li><a class="" href="../filters/exception.html">Exception Filter</a></li>
+            <li><a class="" href="../filters/forwarded-proto.html">Forwarded Protocol Filter</a></li>
+            <li><a class="" href="../filters/header-normalization.html">Header Normalization filter</a></li>
+            <li><a class="" href="../filters/header-translation.html">Header Translation Filter</a></li>
+            <li><a class="" href="../filters/header-user.html">Header User Filter</a></li>
+            <li><a class="" href="../filters/herp.html">Highly Efficient Record Processor (HERP) Filter</a></li>
+            <li><a class="" href="../filters/ip-user.html">IP User Filter</a></li>
+            <li><a class="" href="../filters/iri-validator.html">IRI Validator Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2.html">Keystone v2 Filter</a></li>
+            <li><a class="" href="../filters/keystone-v2-basic-auth.html">Keystone v2 Basic Auth Filter</a></li>
+            <li><a class="" href="../filters/merge-header.html">Merge Header Filter</a></li>
+            <li><a class="" href="../filters/openstack-identity-v3.html">Openstack Identity v3 Filter</a></li>
+            <li><a class="" href="../filters/rackspace-auth-user.html">Rackspace Auth User Filter</a></li>
+            <li><a class="" href="../filters/rate-limiting.html">Rate Limiting Filter</a></li>
+            <li><a class="" href="../filters/saml-policy.html">SAML Policy Translation Filter</a></li>
+            <li><a class="" href="../filters/scripting.html">Scripting Filter</a></li>
+            <li><a class="" href="../filters/simple-rbac.html">Simple Role Based Access Control (RBAC) Filter</a></li>
+            <li><a class="" href="../filters/slf4j-http-logging.html">SFL4J HTTP Logging Filter</a></li>
+            <li><a class="" href="../filters/translation.html">Translation Filter</a></li>
+            <li><a class="" href="../filters/uri-normalization.html">URI Normalization Filter</a></li>
+            <li><a class="" href="../filters/uri-stripper.html">URI Stripper Filter</a></li>
+            <li><a class="" href="../filters/uri-user.html">URI User Filter</a></li>
+            <li><a class="" href="../filters/url-extractor-to-header.html">URL Extractor to Header Filter</a></li>
+            <li><a class="" href="../filters/valkyrie-authorization.html">Valkyrie Authorization Filter</a></li>
+            <li><a class="" href="../filters/versioning.html">Versioning Filter</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-right"></span>Services
+      </a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../services/index.html">Overview</a></li>
+            <li><a class="" href="../services/atom-feed-consumption.html">Atom Feed Consumption Service</a></li>
+            <li><a class="" href="../services/datastores.html">Datastores</a></li>
+            <li><a class="" href="../services/health-check.html">Health Check service</a></li>
+            <li><a class="" href="../services/http-connection-pool.html">HTTP Connection Pool service</a></li>
+            <li><a class="" href="../services/phone-home.html">Phone Home Service</a></li>
+            <li><a class="" href="../services/response-messaging.html">Response Messaging service</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>System Model</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This version of the docs is a work in progress.
+If you don&#8217;t see what you are looking for check the legacy <a href="http://wiki.openrepose.org">wiki</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Repose <code>system-model.cfg.xml</code> is the main configuration file for Repose.
+It outlines the entire deployment layout for the service cluster.
+Repose must be aware of this in order to configure itself and correctly coordinate routing if necessary.
+Additionally, the system model lets Repose know where the other Repose nodes reside.
+Using this information, Repose can coordinate its own clustering to help load balance or share data among nodes that share common filters.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="model-definitions"><a class="anchor" href="#model-definitions"></a>Model Definitions</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Cluster (Service or Repose)</dt>
+<dd>
+<p>An entity that defines a collection of nodes, all of which provide equivalent functionality.
+This element also defines service&#8217;s scope within the system model.
+The service hosted on each node must be functionally equivalent at the API level.
+A filter chain may be attached to a Repose cluster to identify the Repose HTTP message interception logic that must be performed by each node within the cluster.</p>
+</dd>
+<dt class="hdlist1">Endpoint</dt>
+<dd>
+<p>An endpoint is a special type of destination.
+An endpoint destination can specify an exact node to which requests can be routed.
+This element can contain protocol, hostname, root-path, and port elements that are used in constructing a route.
+If the endpoint is within the same container as Repose, protocol, hostname and port are not specified.</p>
+</dd>
+<dt class="hdlist1">Destinations</dt>
+<dd>
+<p>A Repose cluster must enumerate eligible routes to which HTTP messages can be forwarded.
+These are listed in the destinations section of the repose-cluster.
+If a destination is requested that is not listed in this section, a "service not available" code is returned.
+A valid destination can either be an endpoint or a target cluster.
+All nodes within the target cluster of a destination are considered eligible for routing, and by default, Repose forwards to each node in round-robin order, starting at the top of the node sequence.</p>
+</dd>
+<dt class="hdlist1">Filter</dt>
+<dd>
+<p>An HTTP message interceptor that provides a specific piece of business functionality.
+A filter contains a Repose specific named reference.</p>
+</dd>
+<dt class="hdlist1">Filters (Filter Chain)</dt>
+<dd>
+<p>A sequence of filters that will intercept and process the request and/ord response.
+The request will be processed in order starting from the topmost filter in the sequence down to the bottom.
+The response will be processed in order starting from the bottommost filter in the sequence up to the top.</p>
+</dd>
+<dt class="hdlist1">Node (Cluster Node)</dt>
+<dd>
+<p>A named reference that may be used to locate a network endpoint.
+The hostname may be the human readable, string representation of an IPv4 or IPv6 address or a named reference that an IPv4 or IPv6 address.</p>
+</dd>
+<dt class="hdlist1">Service</dt>
+<dd>
+<p>A service is any served REST API bound to a TCP/IP address and port.
+A service is considered served and available so long as it is addressable and accessible to a separate processes (local or remote).</p>
+</dd>
+<dt class="hdlist1">Services</dt>
+<dd>
+<p>A sequence of services that will be loaded into the servlet context to be available for filters in the cluster.</p>
+</dd>
+<dt class="hdlist1">Target Cluster</dt>
+<dd>
+<p>A target cluster is a type of destination that specifies another cluster (Repose or service) as a routing destination.
+The target cluster element can contain cluster, protocol, root-path attributes.
+Repose will choose a node from the target cluster as the target of the dispatch in a round-robin manner.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section is only meant to explain certain quirks of the system model, and to provide a link to the comprehensive configuration schema.
+Other aspects of configuration will be explained through examples. See: <a href="#repose-deployment-scenarios">Repose Deployment Scenarios</a></p>
+</div>
+<div class="paragraph">
+<p>Since port numbers below 1024 are privileged, Repose typically can <strong>not</strong> connect directly to them.
+There are several ways to go about getting around this, but one of the most generally accepted ways is to execute the following commands with root privilege (e.g. sudo):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/sbin/iptables -t nat -I PREROUTING -p tcp --dport  80 -j REDIRECT --to-port 8080
+/sbin/iptables -t nat -I PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8443</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schema"><a class="anchor" href="#schema"></a><a href="../schemas/system-model.xsd">Schema</a></h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="repose-deployment-scenarios"><a class="anchor" href="#repose-deployment-scenarios"></a>Repose Deployment Scenarios</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="simple-pass-through-proxy"><a class="anchor" href="#simple-pass-through-proxy"></a>Simple Pass-Through Proxy</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span style="color:#070;font-weight:bold">&lt;system-model</span> <span style="color:#b48">xmlns</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://docs.openrepose.org/repose/system-model/v2.0</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+  <span style="color:#070;font-weight:bold">&lt;repose-cluster</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">repose_cluster1</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color:#070;font-weight:bold">&lt;nodes&gt;</span>
+      <span style="color:#070;font-weight:bold">&lt;node</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">repose_node1</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="2"></i><b>(2)</b>
+            <span style="color:#b48">hostname</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">localhost</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="3"></i><b>(3)</b>
+            <span style="color:#b48">http-port</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">8080</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">/&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
+    <span style="color:#070;font-weight:bold">&lt;/nodes&gt;</span>
+
+    <span style="color:#070;font-weight:bold">&lt;filters</span><span style="color:#070;font-weight:bold">/&gt;</span> <i class="conum" data-value="5"></i><b>(5)</b>
+
+    <span style="color:#070;font-weight:bold">&lt;services</span><span style="color:#070;font-weight:bold">/&gt;</span> <i class="conum" data-value="6"></i><b>(6)</b>
+
+    <span style="color:#070;font-weight:bold">&lt;destinations&gt;</span>
+      <span style="color:#070;font-weight:bold">&lt;endpoint</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">open_repose</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="7"></i><b>(7)</b>
+                <span style="color:#b48">protocol</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="8"></i><b>(8)</b>
+                <span style="color:#b48">hostname</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">openrepose.org</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="9"></i><b>(9)</b>
+                <span style="color:#b48">root-path</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="10"></i><b>(10)</b>
+                <span style="color:#b48">port</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">80</span><span style="color:#710">&quot;</span></span> <i class="conum" data-value="11"></i><b>(11)</b>
+                <span style="color:#b48">default</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">true</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">/&gt;</span> <i class="conum" data-value="12"></i><b>(12)</b>
+    <span style="color:#070;font-weight:bold">&lt;/destinations&gt;</span>
+  <span style="color:#070;font-weight:bold">&lt;/repose-cluster&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;/system-model&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Defines a new Repose cluster with an ID that must be unique across all defined clusters.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Defines a new Repose node with an ID that must be unique across all defined nodes in the list.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Defines the hostname of the Repose node.
+If set to localhost, any physical node will match and run the Repose node.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Defines the port for the node to listen on.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Defines a sequence of filters to run. In this case, no filters are being used.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Defines a set of services to run. In this case, no services are being used.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Defines a new endpoint with an ID that must be unique across all defined endpoints in the destinations list. There must be exactly one default destination endpoint.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Defines the endpoint&#8217;s protocol.
+If the protocol is not specified, then internal dispatch is assumed.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>Defines the endpoint&#8217;s host name.
+If not specified, localhost is assumed.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>Defines the endpoint&#8217;s base path.
+This will be used in building the URI/path for connecting to the service.
+Any additional URI info will be appended to this.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="11"></i><b>11</b></td>
+<td>Defines the endpoint&#8217;s port.
+If not specified (or 0), internal dispatch is assumed.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td>Specifies whether or not this is the default destination endpoint.
+The default destination endpoint will be responsible for handling all traffic that is not explicitly routed to a different destination endpoint.
+Remember that a target can be specified rather than an endpoint if you want to use round-robin routing to a service cluster.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nova-api-localhost-deployment"><a class="anchor" href="#nova-api-localhost-deployment"></a>Nova-API Localhost Deployment</h3>
+<div class="paragraph">
+<p><strong>IN PROGRESS</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="root-war-local-servlet-application-container-routing-deployment"><a class="anchor" href="#root-war-local-servlet-application-container-routing-deployment"></a>Root WAR (Local Servlet Application-Container Routing) Deployment</h3>
+<div class="paragraph">
+<p><strong>IN PROGRESS</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="complex-cluster-layout-with-cluster-routing"><a class="anchor" href="#complex-cluster-layout-with-cluster-routing"></a>Complex Cluster Layout With Cluster Routing</h3>
+<div class="paragraph">
+<p><strong>IN PROGRESS</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="health-check-passthrough"><a class="anchor" href="#health-check-passthrough"></a>Health Check Passthrough</h3>
+<div class="paragraph">
+<p><strong>IN PROGRESS</strong></p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="/_javascripts/include-html.js" type="text/javascript"></script>
+  <script>includeHTML();</script>
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>
